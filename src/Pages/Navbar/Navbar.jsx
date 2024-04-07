@@ -1,47 +1,38 @@
 import { NavLink } from "react-router-dom";
-
+import logo from "../../../public/icons/logo.png";
 const Navbar = () => {
   const navLinks = (
     <>
       <NavLink
         className={({ isActive }) =>
-          isActive && "text-[#1a56db] font-semibold text-[18px]"
+          isActive
+            ? "text-[#1a56db] font-semibold text-[18px]"
+            : "font-semibold text-[18px] text-white"
         }
         to="/"
       >
-        <li className="hover:text-[#1a56db]">
-          <a>Home</a>
-        </li>
+        <li className="hover:text-[#1a56db]">Home</li>
       </NavLink>
+
       <NavLink
         className={({ isActive }) =>
-          isActive && "text-[#1a56db] font-semibold text-[18px]"
-        }
-        to="/register"
-      >
-        <li className="hover:text-[#1a56db]">
-          <a>Register</a>
-        </li>
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive && "text-[#1a56db] font-semibold text-[18px]"
+          isActive
+            ? "text-[#1a56db] font-semibold text-[18px]"
+            : "font-semibold text-[18px] text-white"
         }
         to="/updateProfile"
       >
-        <li className="hover:text-[#1a56db]">
-          <a>Update Profile</a>
-        </li>
+        <li className="hover:text-[#1a56db]">Update Profile</li>
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive && "text-[#1a56db] font-semibold text-[18px]"
+          isActive
+            ? "text-[#1a56db] font-semibold text-[18px]"
+            : "font-semibold text-[18px] text-white"
         }
         to="/userProfile"
       >
-        <li className="hover:text-[#1a56db]">
-          <a>User Profile</a>
-        </li>
+        <li className="hover:text-[#1a56db]">User Profile</li>
       </NavLink>
     </>
   );
@@ -75,16 +66,20 @@ const Navbar = () => {
             </ul>
           </div>
           <button className="btn btn-ghost text-white text-xl">
-            Realist-Homes
+            <img src={logo} alt="" />
           </button>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal text-white font-semibold  text-[18px] px-1">
+          <ul className="menu menu-horizontal text-white font-semibold space-x-8 text-[18px] px-1">
             {navLinks}
           </ul>
         </div>
         <div className="navbar-end">
-          <button className="btn">Login</button>
+          <NavLink to="/login">
+            <button className=" text-white px-6 py-2 bg-[#1a56db] hover:scale-[1.1] transition text-[18px] font-semibold rounded-md">
+              Login
+            </button>
+          </NavLink>
         </div>
       </div>
     </div>
