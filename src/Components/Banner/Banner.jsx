@@ -20,11 +20,11 @@ const Banner = () => {
   return (
     <div>
       <div className="text-center space-y-4 my-8">
-        <h2 className="text-6xl font-bold mx-auto lg:w-[530px]">
+        <h2 className="lg:text-6xl text-xl font-bold mx-auto lg:w-[530px]">
           It's time to find{" "}
           <span className="text-[#1a56db]">your dream home</span>
         </h2>
-        <p className="text-base text-[#4a5568] font-semibold mx-auto lg:w-[800px]">
+        <p className="lg:text-base text-sm text-[#4a5568] font-semibold mx-auto lg:w-[800px]">
           Discover your dream home with our exclusive collection of residential
           real estate properties. From cozy cottages to luxurious estates,
           explore a diverse range of homes tailored to your lifestyle.
