@@ -1,0 +1,106 @@
+[
+  {
+    "estate_title": "Luxury Villa with Panoramic Views",
+    "id": 1,
+    "segment_name": "Luxury",
+    "description": "Stunning luxury villa nestled in the hills with breathtaking panoramic views of the surrounding landscape.",
+    "price": "$2,500,000",
+    "status": "sale",
+    "area": "5000 sq ft",
+    "location": "Hollywood Hills, Los Angeles",
+    "facilities": ["Infinity pool", "Home theater", "Gourmet kitchen"],
+    "image": "luxury_villa.jpg"
+  },
+  {
+    "estate_title": "Modern Urban Loft",
+    "id": 2,
+    "segment_name": "Urban",
+    "description": "Chic and stylish loft located in the heart of the city, boasting contemporary design and ample natural light.",
+    "price": "$800,000",
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": "Downtown Manhattan, New York",
+    "facilities": [
+      "Open-concept layout",
+      "Exposed brick walls",
+      "Rooftop terrace"
+    ],
+    "image": "urban_loft.jpg"
+  },
+  {
+    "estate_title": "Cozy Suburban Home",
+    "id": 3,
+    "segment_name": "Suburban",
+    "description": "Warm and inviting family home situated in a peaceful suburban neighborhood, perfect for raising a family.",
+    "price": "$400,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Maplewood, New Jersey",
+    "facilities": ["Backyard garden", "Fireplace", "Home office"],
+    "image": "suburban_home.jpg"
+  },
+  {
+    "estate_title": "Beachfront Paradise Retreat",
+    "id": 4,
+    "segment_name": "Luxury",
+    "description": "Exquisite beachfront property offering unparalleled luxury living experience with direct access to pristine sandy beaches.",
+    "price": "$3,20,000",
+    "status": "rent",
+    "area": "6000 sq ft",
+    "location": "Malibu, California",
+    "facilities": ["Private beach access", "Outdoor kitchen", "Gym"],
+    "image": "beachfront_paradise.jpg"
+  },
+  {
+    "estate_title": "Classic Victorian Mansion",
+    "id": 5,
+    "segment_name": "Luxury",
+    "description": "Grand Victorian mansion exuding timeless elegance and charm, featuring ornate details and expansive gardens.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "area": "8000 sq ft",
+    "location": "Savannah, Georgia",
+    "facilities": ["Grand ballroom", "Wrap-around porch", "Guest cottage"],
+    "image": "victorian_mansion.jpg"
+  },
+  {
+    "estate_title": "Modern Penthouse with City Views",
+    "id": 6,
+    "segment_name": "Urban",
+    "description": "Sleek and sophisticated penthouse offering panoramic city views and luxurious contemporary living spaces.",
+    "price": "$1,200,000",
+    "status": "rent",
+    "area": "2000 sq ft",
+    "location": "Chicago Loop, Illinois",
+    "facilities": [
+      "Floor-to-ceiling windows",
+      "Private terrace",
+      "Fitness center"
+    ],
+    "image": "city_penthouse.jpg"
+  },
+  {
+    "estate_title": "Riverside Cottage Retreat",
+    "id": 7,
+    "segment_name": "Suburban",
+    "description": "Charming riverside cottage nestled among trees, offering a peaceful retreat from city life with serene water views.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Asheville, North Carolina",
+    "facilities": ["Riverside deck", "Cozy fireplace", "Garden gazebo"],
+    "image": "riverside_cottage.jpg"
+  },
+  {
+    "estate_title": "Luxury Ski Chalet",
+    "id": 8,
+    "segment_name": "Luxury",
+    "description": "Elegant ski chalet nestled in the mountains, offering ski-in/ski-out access and luxurious amenities for the ultimate alpine getaway.",
+    "price": "$4,500,000",
+    "status": "rent",
+    "area": "7000 sq ft",
+    "location": "Aspen, Colorado",
+    "facilities": ["Ski-in/ski-out access", "Home theater", "Wine cellar"],
+    "image": "ski_chalet.jpg"
+  }
+]

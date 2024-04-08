@@ -3,12 +3,14 @@ import Root from "./../Pages/Root/Root";
 import Home from "../Pages/Home/Home";
 import Register from "./../Pages/Register/Register";
 import UpdateProfile from "./../Pages/UpdateProfile/UpdateProfile";
-import UserProfile from "./../Pages/UserPrifile/UserProfile";
+import UserProfile from "../Pages/UserProfile/UserProfile";
 import Login from "./../Pages/Login/Login";
+import NotFound from "../Components/NotFound/NotFound";
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",

@@ -76,7 +76,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <NavLink to="/login">
-            <button className=" text-white px-4 py-2 md:px-6 md:py-2 bg-[#1a56db] hover:scale-[1.1] transition text-sm md:text-[18px] font-semibold rounded-md">
+            <button className=" text-white px-4 py-2 lg:px-6 lg:py-2 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[18px] font-semibold rounded-md">
               Login
             </button>
           </NavLink>
