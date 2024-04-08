@@ -1,25 +1,25 @@
 import React, { useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import slider1 from "../../../public/Banner/banner1.jpg";
+import slider2 from "../../../public/Banner/banner2.jpg";
+import slider3 from "../../../public/Banner/banner3.jpg";
+import slider4 from "../../../public/Banner/banner4.jpg";
+import slider5 from "../../../public/Banner/banner5.jpg";
+import slider6 from "../../../public/Banner/banner6.jpg";
 
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import banner1 from "../../../public/Banner/banner1.jpg";
-import banner2 from "../../../public/Banner/banner2.jpg";
-import banner3 from "../../../public/Banner/banner3.jpg";
-import banner4 from "../../../public/Banner/banner4.jpg";
-import banner5 from "../../../public/Banner/banner5.jpg";
-import banner6 from "../../../public/Banner/banner6.jpg";
-import banner7 from "../../../public/Banner/banner7.jpg";
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Banner = () => {
-  const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <div className="mt-20">
-      <div className="text-center space-y-4 mb-8">
+    <div>
+      <div className="text-center space-y-4 my-8">
         <h2 className="text-6xl font-bold mx-auto lg:w-[530px]">
           It's time to find{" "}
           <span className="text-[#1a56db]">your dream home</span>
@@ -31,74 +31,40 @@ const Banner = () => {
         </p>
       </div>
 
-      <div className="container mx-auto">
-        <div>
-          <div>
-            <Swiper
-              onSwiper={setSwiperRef}
-              slidesPerView={3}
-              centeredSlides={true}
-              spaceBetween={30}
-              pagination={{
-                type: "fraction",
-              }}
-              navigation={true}
-              modules={[Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <img
-                  className="h-[700px] rounded-[20px] w-[600px]"
-                  src={banner1}
-                  alt=""
-                />{" "}
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="h-[700px] rounded-[20px] w-[600px]"
-                  src={banner2}
-                  alt=""
-                />{" "}
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="h-[700px] rounded-[20px] w-[600px]"
-                  src={banner3}
-                  alt=""
-                />{" "}
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="h-[700px] rounded-[20px] w-[600px]"
-                  src={banner4}
-                  alt=""
-                />{" "}
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="h-[700px] rounded-[20px] w-[600px]"
-                  src={banner5}
-                  alt=""
-                />{" "}
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="h-[700px] rounded-[20px] w-[600px]"
-                  src={banner6}
-                  alt=""
-                />{" "}
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="h-[700px] rounded-[20px] w-[600px]"
-                  src={banner7}
-                  alt=""
-                />{" "}
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        style={{ borderRadius: "10px" }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img className="w-full h-[700px]" src={slider2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="w-full h-[700px]" src={slider1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="w-full h-[700px]" src={slider3} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="w-full h-[700px]" src={slider4} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="w-full h-[700px]" src={slider5} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="w-full h-[700px]" src={slider6} alt="" />
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

@@ -41,7 +41,7 @@ const Login = () => {
                 />
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute cursor-pointer right-[20px] top-[405px] md:top-[426px] md:right-[710px]"
+                  className="absolute cursor-pointer top-[426px] right-[820px]"
                 >
                   {showPassword ? (
                     <FaEye size={20} />
@@ -53,7 +53,7 @@ const Login = () => {
                 <button className="bg-[#1a56db] md:text-base text-sm lg:text-xl rounded-md p-2 w-full my-4 font-semibold text-white">
                   Login
                 </button>
-                <p className="font-semibold text-[#706f6f] text-sm lg:text-base text-center">
+                <p className="font-semibold text-[#706f6f] text-sm lg:text-lg text-center">
                   Do not Have An Account ?{" "}
                   <Link to="/register" className="text-[#1a56db]">
                     Register

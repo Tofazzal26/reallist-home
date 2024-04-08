@@ -64,7 +64,7 @@ const Register = () => {
                   required
                 />
                 <span
-                  className="absolute cursor-pointer right-[20px] top-[605px] md:top-[643px] md:right-[712px]"
+                  className="absolute cursor-pointer top-[642px] right-[810px]"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
