@@ -60,13 +60,13 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] text-white font-semibold space-x-8 text-[18px] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navLinks}
             </ul>
           </div>
           <button className="btn btn-ghost text-white text-xl">
-            <img src={logo} alt="" />
+            <img className="md:h-full h-[30px]" src={logo} alt="" />
           </button>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -76,7 +76,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <NavLink to="/login">
-            <button className=" text-white px-6 py-2 bg-[#1a56db] hover:scale-[1.1] transition text-[18px] font-semibold rounded-md">
+            <button className=" text-white px-4 py-2 md:px-6 md:py-2 bg-[#1a56db] hover:scale-[1.1] transition text-sm md:text-[18px] font-semibold rounded-md">
               Login
             </button>
           </NavLink>
