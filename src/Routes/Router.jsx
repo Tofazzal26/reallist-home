@@ -7,6 +7,7 @@ import UserProfile from "../Pages/UserProfile/UserProfile";
 import Login from "./../Pages/Login/Login";
 import NotFound from "../Components/NotFound/NotFound";
 import ViewProperty from "../Components/ViewProperty/ViewProperty";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "/viewProperty/:id",
-        element: <ViewProperty />,
+        element: (
+          <PrivateRouter>
+            <ViewProperty />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/register",

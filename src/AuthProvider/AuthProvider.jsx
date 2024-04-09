@@ -15,11 +15,12 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const { stateData, loading } = useHook();
   const [user, setUser] = useState(null);
+  const [notLoading, setNotLoading] = useState(true);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser);
+      setNotLoading(false);
     });
     return () => {
       unSubscribe();
@@ -34,6 +35,7 @@ const AuthProvider = ({ children }) => {
   const githubProvider = new GithubAuthProvider();
 
   const googleLogin = () => {
+    setNotLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         console.log(result.user);
@@ -44,6 +46,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const githubLogin = () => {
+    setNotLoading(true);
     signInWithPopup(auth, githubProvider)
       .then((result) => {
         console.log(result.user);
@@ -54,10 +57,12 @@ const AuthProvider = ({ children }) => {
   };
 
   const createUser = (email, password) => {
+    setNotLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const logInEmailPassword = (email, password) => {
+    setNotLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -70,6 +75,7 @@ const AuthProvider = ({ children }) => {
     user,
     googleLogin,
     githubLogin,
+    notLoading,
   };
   return (
     <AuthContext.Provider value={authUser}>{children}</AuthContext.Provider>
