@@ -9,7 +9,7 @@ const Estate = () => {
   return (
     <div>
       <div className="my-10 space-y-2">
-        <h1 className="text-4xl text-center font-semibold">
+        <h1 className="text-base lg:text-4xl text-center font-semibold">
           Do You Want to Visit a Property? We’ll Get Back to You!
         </h1>
         <p className="lg:text-base text-center text-sm text-gray-500 font-semibold mx-auto lg:w-[800px]">

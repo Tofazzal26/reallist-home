@@ -18,7 +18,7 @@ const StateCard = ({ card }) => {
 
   return (
     <div>
-      <div className="card card-compact h-[650px] rounded-none shadow-loginSd">
+      <div className="card card-compact lg:h-[650px] rounded-none shadow-loginSd">
         <figure>
           <img src={image} alt="Shoes" />
         </figure>
@@ -30,14 +30,14 @@ const StateCard = ({ card }) => {
           <p className="text-[#f7505c] text-2xl">{price}</p>
           <p className="text-lg text-gray-500">Facilities: {facilities}</p>
 
-          <div className="flex items-center">
+          <div className="flex lg:flex-row flex-col items-center">
             <p className="text-lg font-semibold text-gray-600">Area: {area}</p>
             <p className="flex items-center text-[17px] font-semibold text-gray-600">
               <IoLocationSharp size={26} color="#f7505c" />
               {location}
             </p>
           </div>
-          <div className="flex items-center gap-[160px]">
+          <div className="flex lg:flex-row flex-col items-center gap-4 lg:gap-[160px]">
             <button className="bg-[#1d1f1f] text-white flex items-center text-[18px] font-semibold gap-4 px-4 py-4">
               View Property <FaArrowRight />
             </button>
