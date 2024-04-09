@@ -41,7 +41,7 @@ const Login = () => {
                 />
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute cursor-pointer top-[426px] right-[820px]"
+                  className="absolute cursor-pointer top-[426px] right-[960px]"
                 >
                   {showPassword ? (
                     <FaEye size={20} />

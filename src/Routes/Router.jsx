@@ -6,6 +6,7 @@ import UpdateProfile from "./../Pages/UpdateProfile/UpdateProfile";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import Login from "./../Pages/Login/Login";
 import NotFound from "../Components/NotFound/NotFound";
+import ViewProperty from "../Components/ViewProperty/ViewProperty";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +16,10 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/viewProperty/:id",
+        element: <ViewProperty />,
       },
       {
         path: "/register",

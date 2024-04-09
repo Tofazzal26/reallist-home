@@ -6,8 +6,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[18px]"
-            : "font-semibold text-[18px] text-white"
+            ? "text-[#1a56db] font-semibold text-[20px]"
+            : "font-semibold text-[20px] text-white"
         }
         to="/"
       >
@@ -17,8 +17,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[18px]"
-            : "font-semibold text-[18px] text-white"
+            ? "text-[#1a56db] font-semibold text-[20px]"
+            : "font-semibold text-[20px] text-white"
         }
         to="/updateProfile"
       >
@@ -27,8 +27,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[18px]"
-            : "font-semibold text-[18px] text-white"
+            ? "text-[#1a56db] font-semibold text-[20px]"
+            : "font-semibold text-[20px] text-white"
         }
         to="/userProfile"
       >
@@ -38,7 +38,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-[#1f2937]">
+    <div className="bg-[#1f2937] py-2">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -76,7 +76,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <NavLink to="/login">
-            <button className=" text-white px-4 py-2 lg:px-6 lg:py-2 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[18px] font-semibold rounded-md">
+            <button className=" text-white px-4 py-2 lg:px-8 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md">
               Login
             </button>
           </NavLink>

@@ -2,6 +2,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
 import { GiInjustice } from "react-icons/gi";
 import { FaHome } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 const StateCard = ({ card }) => {
   const {
     estate_title,
@@ -38,9 +39,11 @@ const StateCard = ({ card }) => {
             </p>
           </div>
           <div className="flex lg:flex-row flex-col items-center gap-4 lg:gap-[160px]">
-            <button className="bg-[#1d1f1f] text-white flex items-center text-[18px] font-semibold gap-4 px-4 py-4">
-              View Property <FaArrowRight />
-            </button>
+            <NavLink to={`/viewProperty/${id}`}>
+              <button className="bg-[#1d1f1f] text-white flex items-center text-[18px] font-semibold gap-4 px-4 py-4">
+                View Property <FaArrowRight />
+              </button>
+            </NavLink>
             <p className="flex gap-2">
               <span className="text-lg font-semibold text-gray-600">
                 {status}
