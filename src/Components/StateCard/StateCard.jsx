@@ -1,4 +1,6 @@
 import { IoLocationSharp } from "react-icons/io5";
+import { FaArrowRight } from "react-icons/fa6";
+import { GiInjustice } from "react-icons/gi";
 import { FaHome } from "react-icons/fa";
 const StateCard = ({ card }) => {
   const {
@@ -16,30 +18,37 @@ const StateCard = ({ card }) => {
 
   return (
     <div>
-      <div className="card card-compact w-96 bg-base-100 shadow-xl">
+      <div className="card card-compact h-[650px] rounded-none shadow-loginSd">
         <figure>
           <img src={image} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <p>{segment_name}</p>
+          <p className="text-lg  text-gray-500 font-semibold">{segment_name}</p>
           <h2 className="card-title">{estate_title}</h2>
-          <p>{description}</p>
+          <p className="text-lg text-gray-500">{description}</p>
 
-          <p>{price}</p>
-          <p>Facilities: {facilities}</p>
+          <p className="text-[#f7505c] text-2xl">{price}</p>
+          <p className="text-lg text-gray-500">Facilities: {facilities}</p>
 
-          <div className="flex">
-            <p>Area: {area}</p>
-            <p className="flex items-center">
-              <IoLocationSharp />
+          <div className="flex items-center">
+            <p className="text-lg font-semibold text-gray-600">Area: {area}</p>
+            <p className="flex items-center text-[17px] font-semibold text-gray-600">
+              <IoLocationSharp size={26} color="#f7505c" />
               {location}
             </p>
           </div>
-          <div>
-            <button>View Property</button>
-            <p>
-              {status}
-              <FaHome />
+          <div className="flex items-center gap-[160px]">
+            <button className="bg-[#1d1f1f] text-white flex items-center text-[18px] font-semibold gap-4 px-4 py-4">
+              View Property <FaArrowRight />
+            </button>
+            <p className="flex gap-2">
+              <span className="text-lg font-semibold text-gray-600">
+                {status}
+              </span>
+              <span className="flex items-center gap-2">
+                <FaHome size={26} color="#f7505c" />
+                <GiInjustice size={26} color="#1d1f1f" />
+              </span>
             </p>
           </div>
         </div>
