@@ -1,8 +1,32 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors },
+  } = useForm();
+
+  const { logInEmailPassword, googleLogin } = useContext(AuthContext);
+
+  const onSubmit = (data) => {
+    const email = data.email;
+    const password = data.password;
+    logInEmailPassword(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -14,7 +38,7 @@ const Login = () => {
                 Login your account
               </h1>
               <div className="divider"></div>
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <label className="lg:text-lg md:text-base text-sm font-semibold ">
                   Email Address
                 </label>
@@ -25,6 +49,7 @@ const Login = () => {
                   name="email"
                   className="bg-[#f3f3f3] p-3 w-full my-4 text-sm lg:text-base rounded-sm outline-none text-[#9f9f9f]"
                   placeholder="Enter  your email address"
+                  {...register("email", { required: true })}
                   required
                 />
                 <br />
@@ -37,11 +62,13 @@ const Login = () => {
                   name="password"
                   className="bg-[#f3f3f3] p-3 rounded-sm my-4 relative text-sm lg:text-base w-full outline-none text-[#9f9f9f]"
                   placeholder="Enter your password"
+                  {...register("password", { required: true })}
                   required
                 />
+
                 <span
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute cursor-pointer top-[426px] right-[960px]"
+                  className="absolute cursor-pointer top-[440px] right-[710px]"
                 >
                   {showPassword ? (
                     <FaEye size={20} />
@@ -49,6 +76,21 @@ const Login = () => {
                     <FaEyeSlash size={20} />
                   )}
                 </span>
+
+                <div className="flex justify-center gap-2">
+                  <p
+                    onClick={googleLogin}
+                    className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2"
+                  >
+                    <FcGoogle color="#1a56db" size={30} />
+                    <span className="font-semibold">Continue with Google</span>
+                  </p>
+                  <p className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2">
+                    <FaGithub color="#087609" size={30} />
+                    <span className="font-semibold ">Continue with Github</span>
+                  </p>
+                </div>
+
                 <br />
                 <button className="bg-[#1a56db] md:text-base text-sm lg:text-xl rounded-md p-2 w-full my-4 font-semibold text-white">
                   Login

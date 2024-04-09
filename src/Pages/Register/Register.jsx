@@ -1,8 +1,33 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors },
+  } = useForm();
+
+  const { createUser } = useContext(AuthContext);
+
+  const onSubmit = (data) => {
+    const name = data.name;
+    const photo = data.photoURL;
+    const email = data.email;
+    const password = data.password;
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -14,7 +39,7 @@ const Register = () => {
                 Register your account
               </h1>
               <div className="divider"></div>
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <label className="lg:text-lg md:text-base text-sm font-semibold ">
                   Your Name
                 </label>
@@ -25,8 +50,10 @@ const Register = () => {
                   name="name"
                   className="bg-[#f3f3f3] p-3 w-full my-4 text-sm lg:text-base rounded-sm outline-none text-[#9f9f9f]"
                   placeholder="Enter  your name"
+                  {...register("name", { required: true })}
                   required
                 />
+
                 <label className="lg:text-lg md:text-base text-sm font-semibold ">
                   Photo URL
                 </label>
@@ -34,9 +61,10 @@ const Register = () => {
 
                 <input
                   type="text"
-                  name="photo"
+                  name="photoURL"
                   className="bg-[#f3f3f3] p-3 w-full my-4 text-sm lg:text-base rounded-sm outline-none text-[#9f9f9f]"
                   placeholder="Enter  your photo url"
+                  {...register("photoURL", { required: true })}
                   required
                 />
                 <label className="lg:text-lg md:text-base text-sm font-semibold ">
@@ -49,6 +77,7 @@ const Register = () => {
                   name="email"
                   className="bg-[#f3f3f3] p-3 w-full my-4 text-sm lg:text-base rounded-sm outline-none text-[#9f9f9f]"
                   placeholder="Enter  your email address"
+                  {...register("email", { required: true })}
                   required
                 />
                 <br />
@@ -61,10 +90,11 @@ const Register = () => {
                   name="password"
                   className="bg-[#f3f3f3] p-3 rounded-sm my-4 relative text-sm lg:text-base w-full outline-none text-[#9f9f9f]"
                   placeholder="Enter your password"
+                  {...register("password", { required: true })}
                   required
                 />
                 <span
-                  className="absolute cursor-pointer top-[642px] right-[950px]"
+                  className="absolute cursor-pointer top-[660px] right-[710px]"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
@@ -78,7 +108,7 @@ const Register = () => {
                 <button className="bg-[#1a56db] md:text-base text-sm lg:text-xl rounded-md p-2 w-full my-4 font-semibold text-white">
                   Register
                 </button>
-                <p className="font-semibold text-[#706f6f] text-sm lg:text-base text-center">
+                <p className="font-semibold text-[#706f6f] text-sm lg:text-lg text-center">
                   Already have an account ?{" "}
                   <Link to="/login" className="text-[#1a56db]">
                     Login
