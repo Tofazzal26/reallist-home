@@ -14,7 +14,8 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const { logInEmailPassword, googleLogin } = useContext(AuthContext);
+  const { logInEmailPassword, googleLogin, githubLogin } =
+    useContext(AuthContext);
 
   const onSubmit = (data) => {
     const email = data.email;
@@ -85,7 +86,10 @@ const Login = () => {
                     <FcGoogle color="#1a56db" size={30} />
                     <span className="font-semibold">Continue with Google</span>
                   </p>
-                  <p className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2">
+                  <p
+                    onClick={githubLogin}
+                    className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2"
+                  >
                     <FaGithub color="#087609" size={30} />
                     <span className="font-semibold ">Continue with Github</span>
                   </p>
