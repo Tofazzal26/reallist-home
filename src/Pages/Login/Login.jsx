@@ -5,7 +5,13 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { Toaster, toast } from "react-hot-toast";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import auth from "../../FireBase/Firebase.config";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -15,11 +21,37 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const { logInEmailPassword, setNotLoading } = useContext(AuthContext);
+
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { logInEmailPassword, setNotLoading, googleLogin, githubLogin } =
-    useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const googleLogin = () => {
+    setNotLoading(true);
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const githubLogin = () => {
+    setNotLoading(true);
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const onSubmit = (data) => {
     const email = data.email;
@@ -29,7 +61,7 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Please enter a valid email & password");
       });
   };
 
@@ -113,6 +145,7 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <Toaster />
       </div>
     </div>
   );

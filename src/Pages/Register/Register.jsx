@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -15,6 +15,9 @@ const Register = () => {
 
   const { createUser, setPhoto, updateUserProfile } = useContext(AuthContext);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     const name = data.name;
     const photo = data.photoURL;
@@ -26,10 +29,18 @@ const Register = () => {
     }
 
     if (!/[A-Z]/.test(password)) {
-      return toast.error("Password should be at least A-Z and a-z characters");
+      return toast.error(
+        "Please ensure your password contains at least one uppercase and one lowercase letter!"
+      );
     }
     if (!/[a-z]/.test(password)) {
-      return toast.error("Password should be at least A-Z and a-z characters");
+      return toast.error(
+        "Please ensure your password contains at least one uppercase and one lowercase letter!"
+      );
+    }
+
+    if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+      return toast.error("Please enter a valid email address");
     }
 
     createUser(email, password)
@@ -38,6 +49,7 @@ const Register = () => {
         updateUserProfile(name, photo)
           .then(() => {
             toast.success("Register Success");
+            navigate(location?.state ? location.state : "/");
           })
           .catch((error) => {
             console.log(error);

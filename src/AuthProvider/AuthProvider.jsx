@@ -41,31 +41,6 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
-
-  const googleLogin = () => {
-    setNotLoading(true);
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const githubLogin = () => {
-    setNotLoading(true);
-    signInWithPopup(auth, githubProvider)
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   const createUser = (email, password) => {
     setNotLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -83,8 +58,7 @@ const AuthProvider = ({ children }) => {
     logInEmailPassword,
     logOut,
     user,
-    googleLogin,
-    githubLogin,
+    setNotLoading,
     notLoading,
     setPhoto,
     photo,

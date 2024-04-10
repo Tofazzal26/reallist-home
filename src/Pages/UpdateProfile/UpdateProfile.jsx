@@ -2,11 +2,12 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { Toaster, toast } from "react-hot-toast";
 const UpdateProfile = () => {
   const {
     register,
     handleSubmit,
+    reset,
 
     formState: { errors },
   } = useForm();
@@ -18,16 +19,20 @@ const UpdateProfile = () => {
     const photo = data.photoURL;
     updateUserProfile(name, photo)
       .then(() => {
-        console.log("changed");
+        toast.success("Profile Update Successful");
+        reset();
       })
       .catch((error) => {
         console.log(error);
       });
-    console.log(name, photo);
   };
 
   return (
     <div className="md:w-2/3 lg:w-2/3 mx-auto py-14">
+      <h1 className="font-semibold text-lg lg:text-3xl md:text-2xl text-center">
+        Update Profile
+      </h1>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <label className="lg:text-lg md:text-base text-sm font-semibold ">
           New name
@@ -62,6 +67,7 @@ const UpdateProfile = () => {
           Save Change
         </button>
       </form>
+      <Toaster />
     </div>
   );
 };
