@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { Toaster, toast } from "react-hot-toast";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -20,12 +20,24 @@ const Register = () => {
     const photo = data.photoURL;
     const email = data.email;
     const password = data.password;
+
+    if (password.length < 6) {
+      return toast.error("Password should be at least 6 characters");
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      return toast.error("Password should be at least A-Z and a-z characters");
+    }
+    if (!/[a-z]/.test(password)) {
+      return toast.error("Password should be at least A-Z and a-z characters");
+    }
+
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
         updateUserProfile(name, photo)
           .then(() => {
-            console.log("Changed");
+            toast.success("Register Success");
           })
           .catch((error) => {
             console.log(error);
@@ -126,6 +138,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };
