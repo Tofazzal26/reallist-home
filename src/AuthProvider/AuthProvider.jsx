@@ -10,12 +10,14 @@ import {
   GithubAuthProvider,
 } from "firebase/auth";
 import auth from "./../FireBase/Firebase.config";
+import { useLocation, useNavigate } from "react-router-dom";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const { stateData, loading } = useHook();
   const [user, setUser] = useState(null);
   const [notLoading, setNotLoading] = useState(true);
+  const [photo, setPhoto] = useState({});
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -30,6 +32,8 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     signOut(auth);
   };
+
+  const updateProfile = () => {};
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -76,6 +80,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     githubLogin,
     notLoading,
+    setPhoto,
+    photo,
   };
   return (
     <AuthContext.Provider value={authUser}>{children}</AuthContext.Provider>

@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../../public/icons/logo.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+
+  const { email } = user || {};
+  const [showEmail, setShowEmail] = useState(false);
+
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -34,9 +39,42 @@ const Navbar = () => {
             ? "text-[#1a56db] font-semibold text-[20px]"
             : "font-semibold text-[20px] text-white"
         }
+        to="/property"
+      >
+        <li className="hover:text-[#1a56db]">Property</li>
+      </NavLink>
+
+      {user && (
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#1a56db] font-semibold text-[20px]"
+              : "font-semibold text-[20px] text-white"
+          }
+          to="/userProfile"
+        >
+          <li className="hover:text-[#1a56db]">Profile</li>
+        </NavLink>
+      )}
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "text-[#1a56db] font-semibold text-[20px]"
+            : "font-semibold text-[20px] text-white"
+        }
         to="/updateProfile"
       >
         <li className="hover:text-[#1a56db]">Update Profile</li>
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "text-[#1a56db] font-semibold text-[20px]"
+            : "font-semibold text-[20px] text-white"
+        }
+        to="/about"
+      >
+        <li className="hover:text-[#1a56db]">About</li>
       </NavLink>
     </>
   );
@@ -80,12 +118,35 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <button
-              onClick={handleLogOut}
-              className=" text-white px-4 py-2 lg:px-8 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md"
-            >
-              Log Out
-            </button>
+            <div className="relative">
+              <div className={`${showEmail ? "flex" : "hidden"}`}>
+                <div className="bg-[#1a56db] lg:w-[200px] rounded-md text-white absolute right-[210px] top-[20px]">
+                  <div className="p-4 font-semibold">
+                    <h1>Name</h1>
+                    <h1>{email}</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 cursor-pointer">
+                <div
+                  onMouseLeave={() => setShowEmail(false)}
+                  onMouseEnter={() => setShowEmail(true)}
+                >
+                  <div className="avatar">
+                    <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={handleLogOut}
+                  className=" text-white px-4 py-2 lg:px-8 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md"
+                >
+                  Log Out
+                </button>
+              </div>
+            </div>
           ) : (
             <NavLink to="/login">
               <button className=" text-white px-4 py-2 lg:px-8 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md">

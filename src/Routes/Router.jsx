@@ -32,11 +32,19 @@ const Router = createBrowserRouter([
       },
       {
         path: "/updateProfile",
-        element: <UpdateProfile />,
+        element: (
+          <PrivateRouter>
+            <UpdateProfile />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/userProfile",
-        element: <UserProfile />,
+        element: (
+          <PrivateRouter>
+            <UserProfile />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/login",

@@ -13,7 +13,7 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, setPhoto } = useContext(AuthContext);
 
   const onSubmit = (data) => {
     const name = data.name;

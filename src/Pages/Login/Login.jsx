@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -17,7 +18,7 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { logInEmailPassword, googleLogin, githubLogin } =
+  const { logInEmailPassword, setNotLoading, googleLogin, githubLogin } =
     useContext(AuthContext);
 
   const onSubmit = (data) => {
