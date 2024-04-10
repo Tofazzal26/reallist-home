@@ -2,13 +2,13 @@ import { NavLink } from "react-router-dom";
 import logo from "../../../public/icons/logo.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import profileImg from "../../../public/icons/profile.png";
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
 
-  const { email } = user || {};
+  const { email, displayName, photoURL } = user || {};
+  console.log(photoURL);
   const [showEmail, setShowEmail] = useState(false);
-
-  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -120,9 +120,9 @@ const Navbar = () => {
           {user ? (
             <div className="relative">
               <div className={`${showEmail ? "flex" : "hidden"}`}>
-                <div className="bg-[#1a56db] lg:w-[200px] rounded-md text-white absolute right-[210px] top-[20px]">
+                <div className="bg-[#1a56db] lg:w-[250px] rounded-md text-white absolute right-[210px] top-[20px]">
                   <div className="p-4 font-semibold">
-                    <h1>Name</h1>
+                    <h1>{displayName || "Not found"}</h1>
                     <h1>{email}</h1>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ const Navbar = () => {
                 >
                   <div className="avatar">
                     <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                      <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                      <img src={photoURL || profileImg} />
                     </div>
                   </div>
                 </div>

@@ -13,7 +13,7 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const { createUser, setPhoto } = useContext(AuthContext);
+  const { createUser, setPhoto, updateUserProfile } = useContext(AuthContext);
 
   const onSubmit = (data) => {
     const name = data.name;
@@ -23,6 +23,13 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        updateUserProfile(name, photo)
+          .then(() => {
+            console.log("Changed");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);

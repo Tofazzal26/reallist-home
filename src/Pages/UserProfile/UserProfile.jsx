@@ -5,21 +5,23 @@ import { NavLink } from "react-router-dom";
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
 
+  const { email, displayName, photoURL } = user || {};
+
   return (
     <div>
       <div className="p-6 sm:p-12 bg-gray-900 text-white my-12">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <img
-            src="https://source.unsplash.com/75x75/?portrait"
-            alt=""
+            src={photoURL}
+            alt="not found"
             className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300"
           />
           <div className="flex flex-col">
             <h4 className="text-2xl font-semibold text-center md:text-left">
-              Leroy Jenkins
+              {displayName}
             </h4>
-            <p>Email: example@gmail.com</p>
-            <p>photoURL: https:///example.com</p>
+            <p>Email: {email || "Not found"}</p>
+            <p>General Member</p>
           </div>
         </div>
         <div className="flex justify-center pt-4 space-x-4 align-center">

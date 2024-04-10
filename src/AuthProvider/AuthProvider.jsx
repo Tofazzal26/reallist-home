@@ -8,6 +8,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 import auth from "./../FireBase/Firebase.config";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -33,7 +34,12 @@ const AuthProvider = ({ children }) => {
     signOut(auth);
   };
 
-  const updateProfile = () => {};
+  const updateUserProfile = (name, image) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: image,
+    });
+  };
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -82,6 +88,7 @@ const AuthProvider = ({ children }) => {
     notLoading,
     setPhoto,
     photo,
+    updateUserProfile,
   };
   return (
     <AuthContext.Provider value={authUser}>{children}</AuthContext.Provider>
