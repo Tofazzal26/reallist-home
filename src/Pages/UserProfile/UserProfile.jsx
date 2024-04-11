@@ -83,7 +83,7 @@ const UserProfile = () => {
           </a>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-center lg:mb-[153px]">
         <NavLink to="/updateProfile">
           <button className="bg-[#1a56db] text-white text-sm md:text-base px-4 py-2 md:px-6 md:py-3 rounded-md font-semibold">
             Update Profile

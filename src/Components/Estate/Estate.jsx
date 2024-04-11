@@ -11,7 +11,7 @@ const Estate = () => {
     <div>
       <div>
         <div className="mt-12">
-          <div className="divider divider-info px-[200px]">
+          <div className="divider divider-info lg:px-[200px]">
             <FaHome size={100} />
           </div>
         </div>

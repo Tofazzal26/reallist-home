@@ -91,7 +91,7 @@ const Contact = () => {
                     name="name"
                     className="bg-[#f3f3f3] p-3 w-full my-4 text-sm lg:text-base rounded-sm outline-none text-[#9f9f9f]"
                     placeholder="Enter  your name"
-                    {...register("email", { required: true })}
+                    {...register("name", { required: true })}
                     required
                   />
                 </div>

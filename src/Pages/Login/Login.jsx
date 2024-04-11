@@ -87,8 +87,8 @@ const Login = () => {
                   className="bg-[#f3f3f3] p-3 w-full my-4 text-sm lg:text-base rounded-sm outline-none text-[#9f9f9f]"
                   placeholder="Enter  your email address"
                   {...register("email", { required: true })}
-                  required
                 />
+                {errors.email && toast.error("This Email field is required")}
                 <br />
                 <label className="lg:text-lg  md:text-base text-sm font-semibold">
                   Password
@@ -100,8 +100,9 @@ const Login = () => {
                   className="bg-[#f3f3f3] p-3 rounded-sm my-4 relative text-sm lg:text-base w-full outline-none text-[#9f9f9f]"
                   placeholder="Enter your password"
                   {...register("password", { required: true })}
-                  required
                 />
+                {errors.password &&
+                  toast.error("This Password field is required")}
 
                 <span
                   onClick={() => setShowPassword(!showPassword)}
