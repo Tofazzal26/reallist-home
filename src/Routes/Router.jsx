@@ -10,6 +10,7 @@ import ViewProperty from "../Components/ViewProperty/ViewProperty";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import About from "./../Pages/About/About";
 import Property from "../Pages/Property/Property";
+import Contact from "../Pages/Contact/Contact";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -54,11 +55,19 @@ const Router = createBrowserRouter([
       },
       {
         path: "/property",
-        element: <Property />,
+        element: (
+          <PrivateRouter>
+            <Property />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },

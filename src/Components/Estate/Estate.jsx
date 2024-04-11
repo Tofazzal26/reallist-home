@@ -3,11 +3,19 @@ import { useContext } from "react";
 import StateCard from "../StateCard/StateCard";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Spinner } from "@material-tailwind/react";
+import { FaHome } from "react-icons/fa";
 const Estate = () => {
   const { stateData, loading } = useContext(AuthContext);
 
   return (
     <div>
+      <div>
+        <div className="mt-12">
+          <div className="divider divider-info px-[200px]">
+            <FaHome size={100} />
+          </div>
+        </div>
+      </div>
       <div className="my-10 space-y-2">
         <h1 className="text-base lg:text-4xl text-center font-semibold">
           Do You Want to Visit a Property? We’ll Get Back to You!
