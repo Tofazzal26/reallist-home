@@ -8,6 +8,8 @@ import Login from "./../Pages/Login/Login";
 import NotFound from "../Components/NotFound/NotFound";
 import ViewProperty from "../Components/ViewProperty/ViewProperty";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import About from "./../Pages/About/About";
+import Property from "../Pages/Property/Property";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +51,14 @@ const Router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/property",
+        element: <Property />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },
