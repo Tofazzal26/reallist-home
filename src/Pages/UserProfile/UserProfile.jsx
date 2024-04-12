@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
@@ -9,6 +10,9 @@ const UserProfile = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Reallist Homes | Profile</title>
+      </Helmet>
       <div className="p-6 sm:p-12 bg-gray-900 text-white my-12">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <img

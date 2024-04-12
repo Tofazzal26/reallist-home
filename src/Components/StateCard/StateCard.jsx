@@ -3,6 +3,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { GiInjustice } from "react-icons/gi";
 import { FaHome } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const StateCard = ({ card }) => {
   const {
     estate_title,
@@ -29,7 +30,11 @@ const StateCard = ({ card }) => {
           <p className="text-lg text-gray-500">{description}</p>
 
           <p className="text-[#f7505c] text-2xl">{price}</p>
-          <p className="text-lg text-gray-500">Facilities: {facilities}</p>
+          <p className="text-lg text-gray-500">
+            {`${facilities[0]},
+            ${facilities[1]},
+            ${facilities[2]}`}
+          </p>
 
           <div className="flex lg:flex-row flex-col items-center">
             <p className="text-lg font-semibold text-gray-600">Area: {area}</p>

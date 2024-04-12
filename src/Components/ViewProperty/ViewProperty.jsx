@@ -5,6 +5,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
 import { GiInjustice } from "react-icons/gi";
 import { FaHome } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 const ViewProperty = () => {
   const { id } = useParams();
   const { stateData, loading } = useContext(AuthContext);
@@ -29,6 +30,9 @@ const ViewProperty = () => {
 
   return (
     <div className="mt-10">
+      <Helmet>
+        <title>Reallist | StateDetails {id}</title>
+      </Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-3">
         <div className="col-span-2">
           <img className="w-full lg:h-[500px]" src={image} alt="" />

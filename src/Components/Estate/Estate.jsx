@@ -4,6 +4,7 @@ import StateCard from "../StateCard/StateCard";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Spinner } from "@material-tailwind/react";
 import { FaHome } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 const Estate = () => {
   const { stateData, loading } = useContext(AuthContext);
 

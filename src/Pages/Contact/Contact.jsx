@@ -6,6 +6,7 @@ import agent4 from "../../../public/About/agent4.jpg";
 import { useForm } from "react-hook-form";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 const Contact = () => {
   const {
     register,
@@ -18,6 +19,9 @@ const Contact = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Reallist Homes | Contact</title>
+      </Helmet>
       <h1 className="text-4xl my-8">Our Agents</h1>
       <div className="grid grid-cols-1 lg:grid-cols-4">
         <div className="flex gap-6 items-center">

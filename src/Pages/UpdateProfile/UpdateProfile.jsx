@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const UpdateProfile = () => {
   const {
     register,
@@ -31,6 +32,9 @@ const UpdateProfile = () => {
 
   return (
     <div className="md:w-2/3 lg:w-2/3 mx-auto py-14">
+      <Helmet>
+        <title>Reallist Homes | UpdateProfile</title>
+      </Helmet>
       <h1 className="font-semibold text-lg lg:text-3xl md:text-2xl my-10 text-center">
         Update Your Profile ?
       </h1>

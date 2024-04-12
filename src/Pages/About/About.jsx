@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import aboutImg from "../../../public/About/about.jpg";
 
 const About = () => {
   return (
     <div>
+      <Helmet>
+        <title>Reallist Homes | About</title>
+      </Helmet>
       <div className="my-8">
         <h1 className="text-4xl text-center my-2 font-semibold">About Us</h1>
         <p className="lg:text-base text-sm text-[#4a5568] text-center font-semibold mx-auto lg:w-[800px]">
