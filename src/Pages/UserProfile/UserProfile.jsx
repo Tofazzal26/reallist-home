@@ -13,7 +13,10 @@ const UserProfile = () => {
       <Helmet>
         <title>Reallist Homes | Profile</title>
       </Helmet>
-      <div className="p-6 sm:p-12 bg-gray-900 text-white my-12">
+      <div
+        data-aos="fade-left"
+        className="p-6 sm:p-12 bg-gray-900 text-white my-12"
+      >
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <img
             src={photoURL}
@@ -88,11 +91,13 @@ const UserProfile = () => {
         </div>
       </div>
       <div className="text-center lg:mb-[153px]">
-        <NavLink to="/updateProfile">
-          <button className="bg-[#1a56db] text-white text-sm md:text-base px-4 py-2 md:px-6 md:py-3 rounded-md font-semibold">
-            Update Profile
-          </button>
-        </NavLink>
+        <div data-aos="fade-right">
+          <NavLink to="/updateProfile">
+            <button className="bg-[#1a56db] text-white text-sm md:text-base px-4 py-2 md:px-6 md:py-3 rounded-md font-semibold">
+              Update Profile
+            </button>
+          </NavLink>
+        </div>
       </div>
     </div>
   );

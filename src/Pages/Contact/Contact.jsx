@@ -23,7 +23,11 @@ const Contact = () => {
         <title>Reallist Homes | Contact</title>
       </Helmet>
       <h1 className="text-4xl my-8">Our Agents</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        className="grid grid-cols-1 lg:grid-cols-4"
+      >
         <div className="flex gap-6 items-center">
           <div className="avatar">
             <div className="w-24 rounded-full">
@@ -80,7 +84,7 @@ const Contact = () => {
       <div className="divider w-full"></div>
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 my-12">
-          <div className="col-span-2">
+          <div data-aos="fade-right" className="col-span-2">
             <h1 className="text-4xl my-8">Send a Message</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -132,7 +136,7 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="col-span-1">
+          <div data-aos="fade-left" className="col-span-1">
             <h1 className="text-4xl my-8">Get in Touch</h1>
             <div className="space-y-12">
               <div className="space-y-4">

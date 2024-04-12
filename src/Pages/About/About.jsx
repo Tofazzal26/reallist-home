@@ -8,8 +8,16 @@ const About = () => {
         <title>Reallist Homes | About</title>
       </Helmet>
       <div className="my-8">
-        <h1 className="text-4xl text-center my-2 font-semibold">About Us</h1>
-        <p className="lg:text-base text-sm text-[#4a5568] text-center font-semibold mx-auto lg:w-[800px]">
+        <h1
+          data-aos="fade-left"
+          className="text-4xl text-center my-2 font-semibold"
+        >
+          About Us
+        </h1>
+        <p
+          data-aos="fade-right"
+          className="lg:text-base text-sm text-[#4a5568] text-center font-semibold mx-auto lg:w-[800px]"
+        >
           At Reallist, we believe in more than just buying and selling houses.
           We believe in building relationships, creating communities, and
           helping our clients find their perfect place to call home.
@@ -17,10 +25,14 @@ const About = () => {
       </div>
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="col-span-1">
+          <div data-aos="fade-right" className="col-span-1">
             <img src={aboutImg} alt="" />
           </div>
-          <div className="col-span-1 bg-[#31323c] text-white">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="500"
+            className="col-span-1 bg-[#31323c] text-white"
+          >
             <div className="p-8 space-y-3">
               <h1 className="text-4xl">Experience since 1997</h1>
               <p className="text-[#bc986b] font-semibold text-lg">Our Goal</p>

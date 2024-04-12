@@ -41,7 +41,7 @@ const UpdateProfile = () => {
 
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6">
-          <div className="col-span-1">
+          <div data-aos="fade-right" className="col-span-1">
             <div className="flex flex-col lg:flex-row gap-4 items-center">
               <div className="avatar">
                 <div className="w-24 rounded-full">
@@ -54,7 +54,7 @@ const UpdateProfile = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-2">
+          <div data-aos="fade-left" className="col-span-2">
             <form onSubmit={handleSubmit(onSubmit)}>
               <label className="lg:text-lg md:text-base text-sm font-semibold ">
                 New name

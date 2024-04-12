@@ -39,18 +39,53 @@ const ViewProperty = () => {
         </div>
         <div className="col-span-1">
           <div className="card-body">
-            <p className="text-[22px]  text-gray-500 font-semibold">
+            <p
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              className="text-[22px]  text-gray-500 font-semibold"
+            >
               {segment_name}
             </p>
-            <h2 className="card-title text-[25px]">{estate_title}</h2>
-            <p className="text-[20px] text-gray-500">{description}</p>
-
-            <p className="text-[#f7505c] text-3xl">{price}</p>
-            <p className="text-[20px] text-gray-500">
-              Facilities: {facilities}
+            <h2
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
+              className="card-title text-[25px]"
+            >
+              {estate_title}
+            </h2>
+            <p
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="1200"
+              className="text-[20px] text-gray-500"
+            >
+              {description}
             </p>
 
-            <div className="flex lg:flex-row flex-col items-center">
+            <p
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="1400"
+              className="text-[#f7505c] text-3xl"
+            >
+              {price}
+            </p>
+            <p
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="1600"
+              className="text-[20px] text-gray-500"
+            >
+              {facilities}
+            </p>
+
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="1800"
+              className="flex lg:flex-row flex-col items-center"
+            >
               <p className="text-[18px] font-semibold text-gray-600">
                 Area: {area}
               </p>
@@ -59,7 +94,12 @@ const ViewProperty = () => {
                 {location}
               </p>
             </div>
-            <div className="flex lg:flex-row flex-col items-center gap-4 lg:gap-[160px]">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="2000"
+              className="flex lg:flex-row flex-col items-center gap-4 lg:gap-[160px]"
+            >
               <NavLink to="/">
                 <button className="bg-[#1d1f1f] text-white flex items-center text-[20px] font-semibold gap-4 px-4 py-4">
                   Go Home <FaArrowRight />

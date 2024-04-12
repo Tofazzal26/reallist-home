@@ -25,25 +25,68 @@ const StateCard = ({ card }) => {
           <img src={image} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <p className="text-lg  text-gray-500 font-semibold">{segment_name}</p>
-          <h2 className="card-title">{estate_title}</h2>
-          <p className="text-lg text-gray-500">{description}</p>
+          <p
+            data-aos="fade-left"
+            data-aos-delay="1000"
+            data-aos-duration="1400"
+            className="text-lg  text-gray-500 font-semibold"
+          >
+            {segment_name}
+          </p>
+          <h2
+            data-aos="fade-left"
+            data-aos-delay="1100"
+            data-aos-duration="1500"
+            className="card-title"
+          >
+            {estate_title}
+          </h2>
+          <p
+            data-aos="fade-left"
+            data-aos-delay="1200"
+            data-aos-duration="1600"
+            className="text-lg text-gray-500"
+          >
+            {description}
+          </p>
 
-          <p className="text-[#f7505c] text-2xl">{price}</p>
-          <p className="text-lg text-gray-500">
+          <p
+            data-aos="fade-left"
+            data-aos-delay="1300"
+            data-aos-duration="1700"
+            className="text-[#f7505c] text-2xl"
+          >
+            {price}
+          </p>
+          <p
+            data-aos="fade-left"
+            data-aos-delay="1400"
+            data-aos-duration="1800"
+            className="text-lg text-gray-500"
+          >
             {`${facilities[0]},
             ${facilities[1]},
             ${facilities[2]}`}
           </p>
 
-          <div className="flex lg:flex-row flex-col items-center">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="1500"
+            data-aos-duration="1900"
+            className="flex lg:flex-row flex-col items-center"
+          >
             <p className="text-lg font-semibold text-gray-600">Area: {area}</p>
             <p className="flex items-center text-[17px] font-semibold text-gray-600">
               <IoLocationSharp size={26} color="#f7505c" />
               {location}
             </p>
           </div>
-          <div className="flex lg:flex-row flex-col items-center gap-4 lg:gap-[160px]">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="1600"
+            data-aos-duration="2000"
+            className="flex lg:flex-row flex-col items-center gap-4 lg:gap-[160px]"
+          >
             <NavLink to={`/viewProperty/${id}`}>
               <button className="bg-[#1d1f1f] text-white flex items-center text-[18px] font-semibold gap-4 px-4 py-4">
                 View Property <FaArrowRight />
