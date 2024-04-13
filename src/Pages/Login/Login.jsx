@@ -12,6 +12,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import auth from "../../FireBase/Firebase.config";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -59,6 +60,7 @@ const Login = () => {
     logInEmailPassword(email, password)
       .then((result) => {
         navigate(location?.state ? location.state : "/");
+        toast.success("Login Successfully");
       })
       .catch((error) => {
         toast.error("Please enter a valid email & password");
@@ -69,6 +71,9 @@ const Login = () => {
     <div>
       <div>
         <div>
+          <Helmet>
+            <title>Reallist Homes | Login</title>
+          </Helmet>
           <div className="bg-[#ffffff] mt-14 shadow-loginSd lg:w-1/2 md:w-2/3 mx-auto">
             <div className="md:w-2/3 lg:w-2/3 mx-auto py-14">
               <h1 className="font-semibold text-lg lg:text-3xl md:text-2xl text-center">
@@ -89,7 +94,7 @@ const Login = () => {
                   {...register("email", { required: true })}
                 />
                 {errors.email && toast.error("This Email field is required")}
-                <br />
+
                 <label className="lg:text-lg  md:text-base text-sm font-semibold">
                   Password
                 </label>

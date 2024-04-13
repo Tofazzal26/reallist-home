@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -64,6 +65,9 @@ const Register = () => {
     <div>
       <div>
         <div>
+          <Helmet>
+            <title>Reallist Homes | Register</title>
+          </Helmet>
           <div className="bg-[#ffffff] mt-14 shadow-loginSd lg:w-1/2 md:w-2/3 mx-auto">
             <div className="md:w-2/3 lg:w-2/3 mx-auto py-14">
               <h1 className="font-semibold text-lg lg:text-3xl md:text-2xl text-center">
@@ -102,7 +106,6 @@ const Register = () => {
                   Email Address
                 </label>
                 <br />
-
                 <input
                   type="email"
                   name="email"
@@ -111,7 +114,7 @@ const Register = () => {
                   {...register("email", { required: true })}
                 />
                 {errors.email && toast.error("This Email field is required")}
-                <br />
+
                 <label className="lg:text-lg  md:text-base text-sm font-semibold">
                   Password
                 </label>
