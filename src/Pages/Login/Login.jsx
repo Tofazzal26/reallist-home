@@ -60,11 +60,11 @@ const Login = () => {
     logInEmailPassword(email, password)
       .then((result) => {
         navigate(location?.state ? location.state : "/");
-        toast.success("Login Successfully");
       })
       .catch((error) => {
         toast.error("Please enter a valid email & password");
       });
+    toast.success("Login Successfully");
   };
 
   return (
@@ -93,32 +93,39 @@ const Login = () => {
                   placeholder="Enter  your email address"
                   {...register("email", { required: true })}
                 />
-                {errors.email && toast.error("This Email field is required")}
+                {errors.email && (
+                  <p className="text-red-600">This Email field is required</p>
+                )}
 
                 <label className="lg:text-lg  md:text-base text-sm font-semibold">
                   Password
                 </label>
                 <br />
-                <input
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  className="bg-[#f3f3f3] p-3 rounded-sm my-4 relative text-sm lg:text-base w-full outline-none text-[#9f9f9f]"
-                  placeholder="Enter your password"
-                  {...register("password", { required: true })}
-                />
-                {errors.password &&
-                  toast.error("This Password field is required")}
-
-                <span
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute cursor-pointer top-[440px] right-[710px]"
-                >
-                  {showPassword ? (
-                    <FaEye size={20} />
-                  ) : (
-                    <FaEyeSlash size={20} />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    className="bg-[#f3f3f3] p-3 rounded-sm my-4 text-sm lg:text-base w-full outline-none text-[#9f9f9f]"
+                    placeholder="Enter your password"
+                    {...register("password", { required: true })}
+                  />
+                  {errors.password && (
+                    <p className="text-red-600">
+                      This Password field is required
+                    </p>
                   )}
-                </span>
+
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute cursor-pointer top-[30px] right-[15px]"
+                  >
+                    {showPassword ? (
+                      <FaEye size={20} />
+                    ) : (
+                      <FaEyeSlash size={20} />
+                    )}
+                  </span>
+                </div>
 
                 <div className="flex justify-center gap-2">
                   <p

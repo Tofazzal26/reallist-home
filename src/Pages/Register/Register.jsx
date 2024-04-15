@@ -14,7 +14,8 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const { createUser, setPhoto, updateUserProfile } = useContext(AuthContext);
+  const { createUser, setPhoto, setProfileLoad, updateUserProfile } =
+    useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const Register = () => {
         console.log(result.user);
         updateUserProfile(name, photo)
           .then(() => {
-            toast.success("Register Success");
+            setProfileLoad(true);
             navigate(location?.state ? location.state : "/");
           })
           .catch((error) => {
@@ -59,6 +60,7 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
       });
+    toast.success("Register Success");
   };
 
   return (
@@ -87,7 +89,9 @@ const Register = () => {
                   placeholder="Enter  your name"
                   {...register("name", { required: true })}
                 />
-                {errors.name && toast.error("This Name field is required")}
+                {errors.name && (
+                  <p className="text-red-600">This Name field is required</p>
+                )}
 
                 <label className="lg:text-lg md:text-base text-sm font-semibold ">
                   Photo URL
@@ -101,7 +105,9 @@ const Register = () => {
                   placeholder="Enter  your photo url"
                   {...register("photoURL", { required: true })}
                 />
-                {errors.photoURL && toast.error("This Photo field is required")}
+                {errors.photoURL && (
+                  <p className="text-red-600">This Photo field is required</p>
+                )}
                 <label className="lg:text-lg md:text-base text-sm font-semibold ">
                   Email Address
                 </label>
@@ -113,31 +119,39 @@ const Register = () => {
                   placeholder="Enter  your email address"
                   {...register("email", { required: true })}
                 />
-                {errors.email && toast.error("This Email field is required")}
+                {errors.email && (
+                  <p className="text-red-600">This Email field is required</p>
+                )}
 
                 <label className="lg:text-lg  md:text-base text-sm font-semibold">
                   Password
                 </label>
                 <br />
-                <input
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  className="bg-[#f3f3f3] p-3 rounded-sm my-4 relative text-sm lg:text-base w-full outline-none text-[#9f9f9f]"
-                  placeholder="Enter your password"
-                  {...register("password", { required: true })}
-                />
-                {errors.password &&
-                  toast.error("This Password field is required")}
-                <span
-                  className="absolute cursor-pointer top-[660px] right-[710px]"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <FaEye size={20} />
-                  ) : (
-                    <FaEyeSlash size={20} />
+
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    className="bg-[#f3f3f3] p-3 rounded-sm my-4  text-sm lg:text-base w-full outline-none text-[#9f9f9f]"
+                    placeholder="Enter your password"
+                    {...register("password", { required: true })}
+                  />
+                  {errors.password && (
+                    <p className="text-red-600">
+                      This Password field is required
+                    </p>
                   )}
-                </span>
+                  <span
+                    className="absolute cursor-pointer top-[30px] right-[10px]"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? (
+                      <FaEye size={20} />
+                    ) : (
+                      <FaEyeSlash size={20} />
+                    )}
+                  </span>
+                </div>
 
                 <br />
                 <button className="bg-[#1a56db] md:text-base text-sm lg:text-xl rounded-md p-2 w-full my-4 font-semibold text-white">

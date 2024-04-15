@@ -20,6 +20,8 @@ const AuthProvider = ({ children }) => {
   const [notLoading, setNotLoading] = useState(true);
   const [photo, setPhoto] = useState({});
 
+  const [profileLoad, setProfileLoad] = useState(false);
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -28,7 +30,7 @@ const AuthProvider = ({ children }) => {
     return () => {
       unSubscribe();
     };
-  }, []);
+  }, [profileLoad]);
 
   const logOut = () => {
     signOut(auth);
@@ -62,6 +64,7 @@ const AuthProvider = ({ children }) => {
     notLoading,
     setPhoto,
     photo,
+    setProfileLoad,
     updateUserProfile,
   };
   return (
