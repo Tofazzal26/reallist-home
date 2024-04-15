@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <div>
       <div>
-        <div>
+        <div data-aos="zoom-in-down">
           <Helmet>
             <title>Reallist Homes | Login</title>
           </Helmet>

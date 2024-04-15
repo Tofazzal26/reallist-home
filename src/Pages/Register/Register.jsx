@@ -66,7 +66,7 @@ const Register = () => {
   return (
     <div>
       <div>
-        <div>
+        <div data-aos="zoom-in-down">
           <Helmet>
             <title>Reallist Homes | Register</title>
           </Helmet>
