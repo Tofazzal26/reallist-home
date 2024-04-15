@@ -24,8 +24,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[20px]"
-            : "font-semibold text-[20px] text-white"
+            ? "text-[#1a56db] font-semibold "
+            : "font-semibold  text-white"
         }
         to="/"
       >
@@ -35,8 +35,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[20px]"
-            : "font-semibold text-[20px] text-white"
+            ? "text-[#1a56db] font-semibold"
+            : "font-semibold  text-white"
         }
         to="/property"
       >
@@ -47,8 +47,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-[#1a56db] font-semibold text-[20px]"
-              : "font-semibold text-[20px] text-white"
+              ? "text-[#1a56db] font-semibold "
+              : "font-semibold  text-white"
           }
           to="/userProfile"
         >
@@ -58,8 +58,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[20px]"
-            : "font-semibold text-[20px] text-white"
+            ? "text-[#1a56db] font-semibold "
+            : "font-semibold  text-white"
         }
         to="/updateProfile"
       >
@@ -68,8 +68,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[20px]"
-            : "font-semibold text-[20px] text-white"
+            ? "text-[#1a56db] font-semibold "
+            : "font-semibold  text-white"
         }
         to="/about"
       >
@@ -78,8 +78,8 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-[#1a56db] font-semibold text-[20px]"
-            : "font-semibold text-[20px] text-white"
+            ? "text-[#1a56db] font-semibold "
+            : "font-semibold  text-white"
         }
         to="/contact"
       >
@@ -93,10 +93,14 @@ const Navbar = () => {
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost md:hidden lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 w-5 bg-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -111,17 +115,17 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] text-white font-semibold space-x-8 text-[18px] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 text-black bg-gray-500 z-10 font-semibold md:text-[18px] space-x-8 lg:text-[20px] p-2 shadow rounded-box w-52"
             >
               {navLinks}
             </ul>
           </div>
           <button className="btn btn-ghost text-white text-xl">
-            <img className="md:h-full h-[30px]" src={logo} alt="" />
+            <img className="md:h-[30px] lg:h-full h-[25px]" src={logo} alt="" />
           </button>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal text-white font-semibold space-x-8 text-[18px] px-1">
+        <div className="navbar-center hidden md:flex lg:flex">
+          <ul className="menu menu-horizontal text-white font-semibold lg:space-x-8 md:space-x-2 md:text-[14px] lg:text-[20px] px-1">
             {navLinks}
           </ul>
         </div>
@@ -159,12 +163,12 @@ const Navbar = () => {
           ) : (
             <div className="space-x-2">
               <NavLink to="/login">
-                <button className=" text-white px-4 py-2 lg:px-8 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md">
+                <button className=" text-white px-3 py-2 lg:px-6 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md">
                   Login
                 </button>
               </NavLink>
               <NavLink to="/register">
-                <button className=" text-white px-4 py-2 lg:px-8 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md">
+                <button className=" text-white px-3 py-2 md:py-2 md:px-2 lg:px-6 lg:py-3 bg-[#1a56db] hover:scale-[1.1] transition text-sm lg:text-[20px] font-semibold rounded-md">
                   Register
                 </button>
               </NavLink>

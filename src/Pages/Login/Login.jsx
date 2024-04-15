@@ -133,14 +133,18 @@ const Login = () => {
                     className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2"
                   >
                     <FcGoogle color="#1a56db" size={30} />
-                    <span className="font-semibold">Continue with Google</span>
+                    <span className="font-semibold text-[12px] lg:text-base">
+                      Continue with Google
+                    </span>
                   </p>
                   <p
                     onClick={githubLogin}
                     className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2"
                   >
                     <FaGithub color="#087609" size={30} />
-                    <span className="font-semibold ">Continue with Github</span>
+                    <span className="font-semibold text-[12px] lg:text-base">
+                      Continue with Github
+                    </span>
                   </p>
                 </div>
 

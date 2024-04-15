@@ -48,7 +48,7 @@ const Estate = () => {
         </div>
       )}
       <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {stateData.map((card) => (
             <StateCard key={card.id} card={card} />
           ))}
