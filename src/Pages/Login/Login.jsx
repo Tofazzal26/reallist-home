@@ -34,7 +34,7 @@ const Login = () => {
     setNotLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-        console.log(result.user);
+        toast.success("Google Login Successfully");
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -46,7 +46,7 @@ const Login = () => {
     setNotLoading(true);
     signInWithPopup(auth, githubProvider)
       .then((result) => {
-        console.log(result.user);
+        toast.success("Github Login Successfully");
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -59,12 +59,12 @@ const Login = () => {
     const password = data.password;
     logInEmailPassword(email, password)
       .then((result) => {
+        toast.success("Login Successfully");
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         toast.error("Please enter a valid email & password");
       });
-    toast.success("Login Successfully");
   };
 
   return (
