@@ -6,7 +6,7 @@ export const useHook = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/public/Estate.json")
+    fetch("Estate.json")
       .then((res) => res.json())
       .then((data) => setStateData(data));
     setLoading(false);
